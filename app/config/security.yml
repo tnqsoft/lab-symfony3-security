@@ -21,8 +21,41 @@ security:
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt)|css|images|js|)/
             security: false
+
+        api_doc:
+            pattern: ^/api/_doc
+            security: false
+
+        api_login:
+            pattern:  ^/api/login
+            stateless: true
+            anonymous: true
+            provider: database_users
+            form_login:
+                check_path:               /api/login
+                require_previous_session: false
+                username_parameter: username
+                password_parameter: password
+                success_handler:    lexik_jwt_authentication.handler.authentication_success
+                failure_handler:    lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern:   ^/api
+            stateless: true
+            provider: database_users
+            lexik_jwt:
+                authorization_header:
+                    enabled: true
+                    prefix:  Bearer
+                query_parameter:
+                    enabled: true
+                    name:    bearer
+                # authentication_provider: nem_api.security.customer_jwt_provider
+                # throw_exceptions: true
+                throw_exceptions:        false
+                create_entry_point:      true
 
         # main:
         #     anonymous: ~
@@ -79,3 +112,5 @@ security:
         - { path: '^/user/reset_password', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/user/dashboard', roles: ROLE_USER }
         - { path: '^/user', roles: ROLE_ADMIN }
+        - { path: '^/api/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/api',       roles: IS_AUTHENTICATED_FULLY }

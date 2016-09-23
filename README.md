@@ -87,4 +87,14 @@ php bin/console app:add-user
 ```
 
 ### Reference
-[https://github.com/capistrano/symfony](https://github.com/capistrano/symfony)
+[http://symfony.com/doc/current/security.html](http://symfony.com/doc/current/security.html)
+
+[https://github.com/lexik/LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle)
+
+[https://github.com/FriendsOfSymfony/FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle)
+
+[https://github.com/nelmio/NelmioApiDocBundle](https://github.com/nelmio/NelmioApiDocBundle)
+
+[https://github.com/nelmio/NelmioCorsBundle](https://github.com/nelmio/NelmioCorsBundle)
+
+[http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html](http://symfony.com/doc/current/bundles/DoctrineMigrationsBundle/index.html)

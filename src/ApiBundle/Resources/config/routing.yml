@@ -1,0 +1,5 @@
+boxtv_service:
+    resource: "@ApiBundle/Controller/ApiController.php"
+    type: rest
+    prefix: /
+    defaults: {_format: ~ }
