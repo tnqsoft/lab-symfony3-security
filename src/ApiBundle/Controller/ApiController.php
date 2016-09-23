@@ -61,7 +61,7 @@ class ApiController extends FOSRestController
     /**
      * Demo API
      *
-     * @Post("/demo")
+     * @Get("/demo")
      *
      * @ApiDoc(
      *  description="Demo API",

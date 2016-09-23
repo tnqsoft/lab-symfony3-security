@@ -31,7 +31,8 @@
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "lexik/jwt-authentication-bundle": "^1.7",
         "friendsofsymfony/rest-bundle": "^2.1",
-        "nelmio/api-doc-bundle": "^2.13"
+        "nelmio/api-doc-bundle": "^2.13",
+        "nelmio/cors-bundle": "^1.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
