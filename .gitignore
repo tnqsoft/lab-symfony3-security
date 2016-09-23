@@ -1,0 +1,76 @@
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+# Cache and logs (Symfony3)
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
+
+# Parameters
+/app/config/parameters.yml
+/app/config/parameters.ini
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/bin/*
+!bin/console
+!bin/symfony_requirements
+/vendor/
+
+# Assets and user uploads
+/web/bundles/
+#/web/uploads/news/*
+#/web/uploads/photo/*
+#/web/uploads/testimonial/*
+#/web/uploads/partner/*
+#/web/uploads/product_category/*
+#/web/uploads/product/*
+#/web/uploads/banner/*
+/web/images/compiled/
+/web/img/compiled/
+/web/media/*
+/web/css/compiled/
+/web/js/compiled/
+!/web/js/index.html
+!/web/css/index.html
+!/web/images/index.html
+#!/web/uploads/index.html
+#!/web/uploads/news/index.html
+#!/web/uploads/photo/index.html
+#!/web/uploads/testimonial/index.html
+#!/web/uploads/partner/index.html
+#!/web/uploads/product_category/index.html
+#!/web/uploads/product/index.html
+#!/web/uploads/banner/index.html
+!/web/media/index.html
+
+# Assets managed by Bower
+/web/assets/vendor/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
+#/composer.phar
+/composer.lock
+
+#netbeans
+/nbproject/
+
+# Other
+/node_modules/
+/build/
+Gemfile.lock
+/*.gz
+/.idea/
