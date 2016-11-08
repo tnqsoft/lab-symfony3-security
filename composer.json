@@ -32,7 +32,8 @@
         "lexik/jwt-authentication-bundle": "^1.7",
         "friendsofsymfony/rest-bundle": "^2.1",
         "nelmio/api-doc-bundle": "^2.13",
-        "nelmio/cors-bundle": "^1.4"
+        "nelmio/cors-bundle": "^1.4",
+        "hwi/oauth-bundle": "^0.5.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -126,3 +126,13 @@ fos_rest:
             'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
         messages:
             'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
+
+hwi_oauth:
+    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+    firewall_names: [secured_area]
+    resource_owners:
+        any_name:
+            type:                google
+            client_id:           988707465859-gklicm3huncqs09ttlm5hm60ib97bdd5.apps.googleusercontent.com
+            client_secret:       e6yJkd99Zat-K6iZm2KWtW8H
+            scope:               "email profile"

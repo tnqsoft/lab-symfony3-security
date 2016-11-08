@@ -15,8 +15,10 @@ security:
         # in this example, users are stored via Doctrine in the database
         # To see the users at src/AppBundle/DataFixtures/ORM/LoadFixtures.php
         # To load users from somewhere else: http://symfony.com/doc/current/cookbook/security/custom_provider.html
-        database_users:
+        entity_provider:
             entity: { class: UserBundle:User, property: username }
+        oauth_provider:
+            entity: { class: UserBundle:User, property: email }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -32,7 +34,7 @@ security:
             pattern:  ^/api/login
             stateless: true
             anonymous: true
-            provider: database_users
+            provider: entity_provider
             form_login:
                 check_path:               /api/login
                 require_previous_session: false
@@ -44,7 +46,7 @@ security:
         api:
             pattern:   ^/api
             stateless: true
-            provider: database_users
+            provider: entity_provider
             lexik_jwt:
                 authorization_header:
                     enabled: true
@@ -89,6 +91,17 @@ security:
                 use_referer: true
                 default_target_path: user_dashboard
 
+            oauth:
+                failure_path: user_login
+                login_path: user_login
+                #check_path: /connect_check
+                use_forward: false
+                provider: oauth_provider
+                resource_owners:
+                    google: "/login/check-google"
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider.entity
+
             logout:
                 # The route name the user can go to in order to logout
                 path: user_logout
@@ -114,3 +127,4 @@ security:
         - { path: '^/user', roles: ROLE_ADMIN }
         - { path: '^/api/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/api',       roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
